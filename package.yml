@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  RegulatorsEndpoint:
+    Type: String
+Resources:
+  LambdaForCodeDeploy:
+    Properties:
+      CodeUri: s3://regulators-service-codedeploy-hooks/05a25a0428436e9a5ab9f48114dffca0
+      Environment:
+        Variables:
+          REGULATORS_ENDPOINT:
+            Ref: RegulatorsEndpoint
+      FunctionName: CodeDeployHook_PreTrafficLambda
+      Handler: index.handler
+      Role: arn:aws:iam::234694765753:role/regulator-role
+      Runtime: nodejs12.x
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31
