@@ -19,7 +19,7 @@
   "homepage": "https://github.com/gdeblina/RegulatorForCodeDeploy#readme",
   "dependencies": {
     "async": "^3.1.0",
-    "aws-sdk": "^2.585.0",
+    "aws-sdk": "^2.814.0",
     "request": "^2.88.0"
   }
 }
